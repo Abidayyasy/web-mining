@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile | Web Mining - PPWA</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="#">WebMining<span>.</span></a>
+  <ul>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="profile">
+  <div class="hero-text">
+    <p class="badge"><i class="fa-solid fa-graduation-cap"></i> Mahasiswa PPWA — Web Mining</p>
+    <h1>Halo, saya <span>[Nama Lengkap]</span></h1>
+    <p class="nim">NIM: [isi NIM] &nbsp;|&nbsp; Prodi: [isi Prodi] &nbsp;|&nbsp; Universitas: [isi Universitas]</p>
+    <p class="desc">Saya mahasiswa yang tertarik di bidang <b>Web Mining, Data Mining & Data Science</b>. Fokus saat ini: crawling berita detik.com (finance & olahraga) dengan <code>trafilatura</code> dan analisis teks.</p>
+    <div class="btns">
+      <a href="#project" class="btn primary"><i class="fa-solid fa-code"></i> Lihat Project</a>
+      <a href="https://github.com/[username]/web-mining-ppwa" target="_blank" class="btn ghost"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+    </div>
+    <div class="stats">
+      <div><b>200</b><span>Artikel tercrawl<br>(100 finance + 100 olahraga)</span></div>
+      <div><b>3</b><span>Kolom CSV<br>id, isi_berita, tema</span></div>
+      <div><b>2</b><span>Tema<br>finance & olahraga</span></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <!-- Ganti src dengan foto kamu: taruh file di assets/profile.jpg -->
+    <img src="https://via.placeholder.com/340x340?text=Foto+Profile" alt="Foto Profile">
+    <div class="card-mini"><i class="fa-solid fa-check"></i> Siap untuk Tugas Web Mining</div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>Tentang Saya</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3><i class="fa-solid fa-user"></i> Biodata</h3>
+      <ul class="list">
+        <li><b>Nama:</b> [Nama Lengkap]</li>
+        <li><b>NIM:</b> [isi NIM]</li>
+        <li><b>Prodi / Kelas:</b> [isi Prodi - Kelas PPWA]</li>
+        <li><b>Email:</b> [email@contoh.com]</li>
+        <li><b>Domisili:</b> [Kota]</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><i class="fa-solid fa-bullseye"></i> Minat & Keahlian</h3>
+      <div class="tags">
+        <span>Python</span><span>Web Mining</span><span>Trafilatura</span><span>BeautifulSoup</span><span>Pandas</span><span>Git</span><span>HTML/CSS</span>
+      </div>
+      <p class="small">Deskripsi singkat: [Tulis 2-3 kalimat tentang motivasi, hobi, atau tujuan karir. Contoh: Saya suka mengolah data teks berita untuk klasifikasi topik...]</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="project">
+  <h2>Project Web Mining</h2>
+  <p class="sub">Crawling detik.com — Finance & Olahraga (tugas PPWA)</p>
+  <div class="project-card">
+    <div class="project-head">
+      <h3><i class="fa-solid fa-newspaper"></i> crawler_detik.ipynb</h3>
+      <span class="pill">100/tema → 200 artikel</span>
+    </div>
+    <p>Crawler mengambil berita dari <code>finance.detik.com</code> dan <code>sport.detik.com</code> via <code>requests + BeautifulSoup</code> (discovery <code>/d-\d+/</code>) dan <code>trafilatura</code> untuk extract <code>isi_berita</code> bersih. Output <code>detik_berita.csv</code> dengan <b>3 kolom Excel-friendly</b>: <code>A=id</code>, <code>B=isi_berita</code>, <code>C=tema</code> (<code>sep=";"</code>).</p>
+    <ul class="check">
+      <li>Target 2 tema × 100 = 200 artikel, <code>ThreadPool + tqdm</code> + log <code>OK | judul...</code></li>
+      <li>Fallback pagination <code>/indeks?page=2..15</code> biar 100/tema tercapai</li>
+      <li>CSV 1 baris = 1 artikel, 1 cell = 1 kolom (tanpa <code>\n</code>/<code>;</code> di isi)</li>
+    </ul>
+    <div class="btns">
+      <a href="../detik_berita.csv" class="btn primary small"><i class="fa-solid fa-download"></i> Download CSV</a>
+      <a href="../crawler_detik.ipynb" class="btn ghost small"><i class="fa-solid fa-file-code"></i> Lihat Notebook</a>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>tema</th><th>jumlah</th></tr></thead>
+        <tbody><tr><td>finance</td><td>100</td></tr><tr><td>olahraga</td><td>100</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Kontak</h2>
+  <div class="contact-grid">
+    <a href="mailto:[email@contoh.com]"><i class="fa-solid fa-envelope"></i> [email@contoh.com]</a>
+    <a href="https://github.com/[username]" target="_blank"><i class="fa-brands fa-github"></i> github.com/[username]</a>
+    <a href="https://linkedin.com/in/[username]" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <a href="https://instagram.com/[username]" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 [Nama Lengkap] — Web Mining PPWA — Dibuat dengan HTML/CSS statis siap deploy ke GitHub Pages.</p>
+  <p class="small">Cara ganti data: edit <code>index.html</code> bagian <code>[...]</code> dan ganti foto di <code>assets/profile.jpg</code></p>
+</footer>
+</body>
+</html>
