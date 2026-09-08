@@ -1,6 +1,6 @@
 # Web Mining — Repositori GitHub + Web Statis Profile
 
-Repositori untuk tugas **Web Mining PPWA**.
+Repositori untuk tugas **Web Mining PPWA** -- acuan dari [Abidayyasy/pendat](https://github.com/Abidayyasy/pendat) (Buku Penambangan Data, NIM 230411100042, Teknik Informatika UTM).
 
 ## Struktur
 ```
