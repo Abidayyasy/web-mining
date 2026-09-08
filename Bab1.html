@@ -392,30 +392,70 @@ document.write(`
                 <article class="bd-article">
 <section id="bab-1-pengantar-web-mining">
 <h1>BAB 1 - PENGANTAR WEB MINING</h1>
-<p>Web Mining adalah penerapan teknik Data Mining untuk menemukan pola dan pengetahuan dari data di World Wide Web.</p>
-<p>Mata kuliah <b>Pencarian dan Penambangan Web</b> membahas cara mesin pencari bekerja, ekstraksi informasi, dan analisis struktur web.</p>
+<p>Web Mining adalah cabang dari Data Mining yang secara khusus menerapkan teknik penemuan pengetahuan pada data yang berasal dari World Wide Web. Jika Data Mining bekerja pada data terstruktur di database, Web Mining harus berhadapan dengan data web yang bersifat heterogen, terdistribusi, tidak terstruktur atau semi-terstruktur (HTML, JSON, XML), multimedia, dan sangat dinamis karena web terus diperbarui setiap detik.</p>
+<p>Secara konseptual, Web Mining bertujuan mengekstrak pengetahuan yang implisit, sebelumnya tidak diketahui, dan berpotensi berguna untuk pengambilan keputusan, baik bagi pengguna, pemilik situs, maupun mesin pencari. Mata kuliah Pencarian dan Penambangan Web mempelajari fondasi ini secara sistematis mulai dari cara kerja mesin pencari hingga teknik analisis lanjutan terhadap isi, struktur, dan perilaku pengguna web.</p>
 </section>
-<section id="definisi"><h2>1. Definisi dan Ruang Lingkup</h2>
+<section id="karakteristik-web">
+<h2>1. Karakteristik Data Web</h2>
+<p>Memahami karakteristik data web adalah kunci untuk merancang metode penambangan yang tepat:</p>
+<ul>
+<li><b>Heterogenitas:</b> Satu halaman dapat berisi teks, tabel, gambar, video, script, dan metadata yang berbeda format.</li>
+<li><b>Semi-terstruktur:</b> HTML memberikan struktur tag, namun isinya tidak mengikuti skema kaku seperti tabel relasional.</li>
+<li><b>Terdistribusi:</b> Data tersebar di jutaan server dengan otonomi dan format yang berbeda.</li>
+<li><b>Dinamis:</b> Konten berubah cepat, tautan muncul dan hilang, versi halaman tidak konsisten.</li>
+<li><b>Redundan dan Noise:</b> Banyak duplikasi, iklan, navigasi, dan boilerplate yang harus dibersihkan sebelum analisis.</li>
+<li><b>Skala Sangat Besar:</b> Web terdiri dari miliaran halaman dengan pertumbuhan eksponensial.</li>
+</ul>
+</section>
+<section id="taksonomi">
+<h2>2. Taksonomi Web Mining</h2>
+<p>Literatur membagi Web Mining menjadi tiga kategori utama yang saling melengkapi:</p>
+<h3>2.1 Web Content Mining</h3>
+<p>Fokus pada isi halaman. Tugasnya meliputi ekstraksi informasi, klasifikasi topik, segmentasi halaman, dan deteksi duplikasi. Teknik yang digunakan mencakup pemrosesan bahasa alami, penghilangan boilerplate, dan representasi vektor teks. Hasilnya adalah representasi bersih dari isi yang dapat dianalisis lebih lanjut.</p>
+<h3>2.2 Web Structure Mining</h3>
+<p>Fokus pada topologi hyperlink. Web dipandang sebagai graf berarah di mana node adalah halaman dan edge adalah tautan. Analisis struktur memungkinkan penemuan otoritas halaman, komunitas, dan pola navigasi. Algoritma klasik seperti PageRank dan HITS termasuk dalam kategori ini dan menjadi fondasi perangkingan mesin pencari modern.</p>
+<h3>2.3 Web Usage Mining</h3>
+<p>Fokus pada perilaku pengguna yang terekam dalam log server, clickstream, dan sesi. Tujuannya adalah memahami pola akses, memprediksi navigasi berikutnya, melakukan personalisasi, dan mendeteksi anomali. Tahapannya meliputi pembersihan log, identifikasi sesi, penemuan pola, dan analisis pola.</p>
+</section>
+<section id="arsitektur">
+<h2>3. Arsitektur Pencarian Web</h2>
+<p>Mekanisme pencarian web modern terdiri dari empat komponen inti yang bekerja secara terintegrasi:</p>
 <ol>
-<li><b>Web Content Mining:</b> isi halaman - crawling detik.com menjadi isi_berita.</li>
-<li><b>Web Structure Mining:</b> hyperlink - PageRank.</li>
-<li><b>Web Usage Mining:</b> log pengguna - rekomendasi.</li>
-</ol></section>
-<section id="perbedaan"><h2>2. Perbedaan Web Mining vs Data Mining</h2>
-<p>Data Mining dari DB terstruktur; Web Mining dari web tidak terstruktur, skala besar, tantangan noise.</p></section>
-<section id="proses"><h2>3. Proses Web Mining</h2>
+<li><b>Crawler:</b> Menjelajahi web secara sistematis dengan mengikuti tautan, mematuhi robots.txt dan batasan politeness.</li>
+<li><b>Indexer:</b> Membangun indeks terbalik (inverted index) yang memetakan istilah ke daftar halaman yang mengandungnya, dilengkapi statistik seperti frekuensi dan posisi.</li>
+<li><b>Query Processor:</b> Menerjemahkan kueri pengguna menjadi operasi pada indeks, menangani perluasan kueri, koreksi ejaan, dan disambiguasi.</li>
+<li><b>Ranking Module:</b> Mengurutkan hasil berdasarkan relevansi yang dihitung dari kecocokan konten, otoritas struktur, dan sinyal perilaku.</li>
+</ol>
+<p>Keempat komponen ini membentuk siklus tertutup di mana log pengguna kembali menjadi masukan untuk perbaikan perangkingan.</p>
+</section>
+<section id="proses">
+<h2>4. Proses Web Mining Secara Umum</h2>
+<p>Proses Web Mining dapat dipandang sebagai rangkaian transformasi data mentah menjadi pengetahuan:</p>
 <ol>
-<li>Crawling - requests + BeautifulSoup</li>
-<li>Extraction - trafilatura</li>
-<li>Generalization - klasifikasi finance vs olahraga</li>
-<li>Analysis - value_counts</li>
-</ol></section>
-<section id="teknik"><h2>4. Teknik Pencarian Web</h2>
-<p>Crawling, Indexing, TF-IDF, PageRank, Text Mining.</p></section>
-<section id="contoh"><h2>5. Contoh PPWA</h2>
-<p>Crawler 200 artikel 100 per tema, CSV id|isi_berita|tema sep=;.</p></section>
-<section id="etika"><h2>6. Tantangan dan Etika</h2>
-<p>robots.txt, privasi, bias.</p></section>
+<li><b>Resource Discovery:</b> Mengumpulkan sumber daya relevan dari web melalui crawling terfokus.</li>
+<li><b>Preprocessing:</b> Pembersihan, normalisasi, penghilangan tag, penanganan encoding, dan deduplikasi.</li>
+<li><b>Generalization:</b> Penerapan algoritma penemuan pola seperti klasifikasi, clustering, dan asosiasi.</li>
+<li><b>Analysis:</b> Interpretasi, evaluasi, dan visualisasi pengetahuan yang ditemukan untuk memastikan kegunaan dan kebaruan.</li>
+</ol>
+</section>
+<section id="perbedaan">
+<h2>5. Perbedaan Mendasar dengan Data Mining Tradisional</h2>
+<p>Meskipun berakar pada prinsip Data Mining, Web Mining memiliki perbedaan signifikan. Data Mining tradisional mengasumsikan data bersih dan terstruktur dalam satu repositori, sedangkan Web Mining harus mengatasi noise tinggi, skema yang tidak konsisten, dan distribusi global. Evaluasi pada Web Mining juga lebih kompleks karena relevansi bersifat subjektif dan bergantung pada konteks pengguna.</p>
+</section>
+<section id="tantangan">
+<h2>6. Tantangan dan Isu Etika</h2>
+<ul>
+<li><b>Skalabilitas:</b> Volume dan kecepatan perubahan web menuntut algoritma yang efisien dan inkremental.</li>
+<li><b>Kualitas Data:</b> Spam, konten duplikat, dan informasi palsu mengurangi keandalan hasil.</li>
+<li><b>Heterogenitas Bahasa:</b> Web multibahasa memerlukan penanganan linguistik yang beragam, termasuk bahasa Indonesia.</li>
+<li><b>Privasi dan Etika:</b> Penggunaan log pengguna harus memperhatikan anonimisasi, persetujuan, dan keadilan algoritma. Kepatuhan terhadap kebijakan situs dan regulasi privasi menjadi prasyarat utama.</li>
+<li><b>Dinamika:</b> Model yang dilatih hari ini dapat usang dalam hitungan hari karena perubahan tren dan konten.</li>
+</ul>
+</section>
+<section id="peran">
+<h2>7. Peran Web Mining dalam Ekosistem Digital</h2>
+<p>Web Mining menjadi fondasi bagi berbagai layanan digital kontemporer seperti mesin pencari, sistem rekomendasi e-commerce, deteksi berita palsu, analisis sentimen media sosial, dan optimasi pengalaman pengguna. Pemahaman yang mendalam tentang prinsip-prinsipnya memungkinkan pengembangan aplikasi yang tidak hanya akurat secara teknis tetapi juga bertanggung jawab secara sosial.</p>
+</section>
 </article>
               
 
