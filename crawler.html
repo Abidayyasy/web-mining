@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Crawler Detik - Praktik Web Mining &#8212; Pendat</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="https://abidayyasy.github.io/pendat/_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="https://abidayyasy.github.io/pendat/_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="https://abidayyasy.github.io/pendat/_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="https://abidayyasy.github.io/pendat/_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://abidayyasy.github.io/pendat/_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://abidayyasy.github.io/pendat/_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://abidayyasy.github.io/pendat/_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="https://abidayyasy.github.io/pendat/_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="https://abidayyasy.github.io/pendat/_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="https://abidayyasy.github.io/pendat/_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="https://abidayyasy.github.io/pendat/_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="https://abidayyasy.github.io/pendat/_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="https://abidayyasy.github.io/pendat/_static/doctools.js?v=9a2dae69"></script>
+    <script src="https://abidayyasy.github.io/pendat/_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://abidayyasy.github.io/pendat/_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="https://abidayyasy.github.io/pendat/_static/copybutton.js?v=f281be69"></script>
+    <script src="https://abidayyasy.github.io/pendat/_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="https://abidayyasy.github.io/pendat/_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="https://abidayyasy.github.io/pendat/_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="https://abidayyasy.github.io/pendat/_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'crawler_detik';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="BAB 1 - PENGANTAR WEB MINING" href="Bab1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+<img src="https://abidayyasy.github.io/pendat/_static/logo.png" class="logo__image only-light" alt="Pendat - Home"/>
+<script>document.write(`<img src="https://abidayyasy.github.io/pendat/_static/logo.png" class="logo__image only-dark" alt="Pendat - Home"/>`);</script>
+
+
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Buku Pencarian dan Penambangan Web
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Bab1.html">BAB 1 - PENGANTAR WEB MINING</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawler Detik - Praktik Web Mining</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+<section id="crawler-detik">
+<h1>Crawler Detik - Praktik Web Mining<a class="headerlink" href="#crawler-detik" title="Link to this heading">#</a></h1>
+<p>Halaman ini menampilkan source code dari notebook <code class="xref py py-class docutils literal notranslate"><span class="pre">crawler_detik.ipynb</span></code> yang berisi praktik web crawling untuk mengambil 200 berita dari detik.com (100 finance + 100 olahraga).</p>
+</section>
+<section id="import-library">
+<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">trafilatura</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span><span class="o">,</span> <span class="n">as_completed</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"trafilatura </span><span class="si">{</span><span class="n">trafilatura</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2"> | pandas </span><span class="si">{</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2"> | requests </span><span class="si">{</span><span class="n">requests</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2"> OK"</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>trafilatura 2.2.0 | pandas 3.0.5 | requests 2.34.2 OK
+</pre></div>
+</div>
+</section>
+<section id="konfigurasi-2-tema">
+<h2>Konfigurasi 2 Tema<a class="headerlink" href="#konfigurasi-2-tema" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"User-Agent"</span><span class="p">:</span> <span class="s2">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"</span><span class="p">,</span>
+    <span class="s2">"Accept-Language"</span><span class="p">:</span> <span class="s2">"id-ID,id;q=0.9,en;q=0.8"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">TOPICS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"tema"</span><span class="p">:</span> <span class="s2">"finance"</span><span class="p">,</span>  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://finance.detik.com/"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"tema"</span><span class="p">:</span> <span class="s2">"olahraga"</span><span class="p">,</span> <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://sport.detik.com/"</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">MAX_PER_TEMA</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">OUTPUT_CSV</span> <span class="o">=</span> <span class="s2">"detik_berita.csv"</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">TOPICS</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>tema</p></th>
+<th class="head"><p>url</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>finance</p></td>
+<td><p>https://finance.detik.com/</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>olahraga</p></td>
+<td><p>https://sport.detik.com/</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-crawling">
+<h2>Main — Crawling 100 Berita per Tema<a class="headerlink" href="#main-crawling" title="Link to this heading">#</a></h2>
+<p>Target <code class="docutils literal notranslate"><span class="pre">100/100</span></code> per tema → total <code class="docutils literal notranslate"><span class="pre">200</span></code> artikel.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">TOPICS</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"\n=== </span><span class="si">{</span><span class="n">topic</span><span class="p">[</span><span class="s1">'tema'</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">topic</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span><span class="si">}</span><span class="s2"> ==="</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">fetch</span><span class="p">(</span><span class="n">topic</span><span class="p">[</span><span class="s2">"url"</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="n">get_article_links</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">topic</span><span class="p">[</span><span class="s2">"url"</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Ditemukan </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span><span class="si">}</span><span class="s2"> link"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">candidates</span> <span class="o">=</span> <span class="n">links</span><span class="p">[:</span><span class="n">MAX_PER_TEMA</span><span class="o">*</span><span class="mi">4</span><span class="p">]</span>
+    <span class="c1"># crawl indeks tambahan jika kandidat kurang</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">MAX_PER_TEMA</span><span class="o">*</span><span class="mi">3</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">extra_url</span> <span class="ow">in</span> <span class="p">[</span><span class="n">topic</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"/indeks?page={page}"</span><span class="p">,</span> <span class="n">topic</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"?page={page}"</span><span class="p">]:</span>
+                <span class="n">extra_html</span> <span class="o">=</span> <span class="n">fetch</span><span class="p">(</span><span class="n">extra_url</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">extra_html</span><span class="p">:</span>
+                    <span class="n">extra_links</span> <span class="o">=</span> <span class="n">get_article_links</span><span class="p">(</span><span class="n">extra_html</span><span class="p">,</span> <span class="n">topic</span><span class="p">[</span><span class="s2">"url"</span><span class="p">])</span>
+                    <span class="n">new</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">extra_links</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+                            <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                            <span class="n">new</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">if</span> <span class="n">new</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  + halaman </span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">: +</span><span class="si">{</span><span class="n">new</span><span class="si">}</span><span class="s2"> -> total </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                        <span class="k">break</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">MAX_PER_TEMA</span><span class="o">*</span><span class="mi">4</span><span class="p">:</span>
+                <span class="k">break</span>
+
+    <span class="n">scraped</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="n">futures</span> <span class="o">=</span> <span class="p">{</span><span class="n">ex</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">scrape_article_trafilatura</span><span class="p">,</span> <span class="n">link</span><span class="p">):</span> <span class="n">link</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">as_completed</span><span class="p">(</span><span class="n">futures</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">futures</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">topic</span><span class="p">[</span><span class="s1">'tema'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">):</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">futures</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">art</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">art</span><span class="p">:</span>
+                <span class="n">art</span><span class="p">[</span><span class="s2">"tema"</span><span class="p">]</span> <span class="o">=</span> <span class="n">topic</span><span class="p">[</span><span class="s2">"tema"</span><span class="p">]</span>
+                <span class="n">scraped</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">art</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">scraped</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">MAX_PER_TEMA</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">fut</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">:</span>
+                        <span class="n">fut</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+                    <span class="k">break</span>
+
+    <span class="n">scraped</span> <span class="o">=</span> <span class="n">scraped</span><span class="p">[:</span><span class="n">MAX_PER_TEMA</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  -> Terkumpul </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">scraped</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">MAX_PER_TEMA</span><span class="si">}</span><span class="s2"> untuk </span><span class="si">{</span><span class="n">topic</span><span class="p">[</span><span class="s1">'tema'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">all_data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">scraped</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># deduplicate by url</span>
+<span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">unique</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="s2">"url"</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s2">"url"</span><span class="p">])</span>
+        <span class="n">unique</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">unique</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"\nTotal unik: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> artikel"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>=== FINANCE | https://finance.detik.com/ ===
+  Ditemukan 46 link
+  + halaman 2: +3 -> total 49
+  + halaman 3: +20 -> total 69
+  ...
+  Setelah indeks tambahan: 293 kandidat
+finance: 100%|██████████| 293/293 [00:18&lt;00:00,  5.42it/s]
+  -> Terkumpul 100/100 untuk finance
+
+=== OLAHRAGA | https://sport.detik.com/ ===
+  Ditemukan 55 link
+  + halaman 2: +15 -> total 70
+  + halaman 3: +20 -> total 90
+  ...
+  Setelah indeks tambahan: 325 kandidat
+olahraga: 100%|██████████| 325/325 [00:20&lt;00:00,  4.93it/s]
+  -> Terkumpul 100/100 untuk olahraga
+
+Total unik: 200 artikel
+</pre></div>
+</div>
+</section>
+<section id="result-csv">
+<h2>Result — CSV + Preview<a class="headerlink" href="#result-csv" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">idx</span><span class="p">,</span> <span class="s2">"isi_berita"</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="s2">"isi_berita"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">";"</span><span class="p">,</span> <span class="s2">","</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">,</span><span class="s2">" "</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"\r"</span><span class="p">,</span><span class="s2">" "</span><span class="p">),</span> <span class="s2">"tema"</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="s2">"tema"</span><span class="p">]}</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"isi_berita"</span><span class="p">,</span> <span class="s2">"tema"</span><span class="p">]]</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">OUTPUT_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s2">"\n"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saved -> </span><span class="si">{</span><span class="n">OUTPUT_CSV</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows x </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> cols"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+    <span class="n">alt</span> <span class="o">=</span> <span class="n">OUTPUT_CSV</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">".csv"</span><span class="p">,</span> <span class="s2">"_new.csv"</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">alt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span> <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s2">"\n"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"\nTotal artikel: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">tabel_tema</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"tema"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">"jumlah"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tabel_tema</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Saved -> detik_berita.csv : 200 rows x 3 cols (sep=';')
+Jumlah kolom: 3
+Daftar kolom:
+  id
+  isi_berita
+  tema
+
+Total artikel: 200
+
+Distribusi tema (tabel):
+          jumlah
+tema
+finance      100
+olahraga     100
+</pre></div>
+</div>
+</section>
+</article>
+          
+
+
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Bab1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BAB 1 - PENGANTAR WEB MINING</p>
+      </div>
+    </a>
+</div>
+</footer>
+
+            </div>
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Muhammad Abid Ayyasy
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      &#169; Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="https://abidayyasy.github.io/pendat/_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="https://abidayyasy.github.io/pendat/_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
